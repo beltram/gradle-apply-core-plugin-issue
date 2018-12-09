@@ -2,13 +2,15 @@
 //plugins {
 //    java
 //}
-
 // THIS DOES NOT WORK
-apply {
-    plugin("java")
-}
+//apply {
+//    plugin("java")
+//}
 // or
-//apply<JavaPlugin>()
+apply<JavaPlugin>()
+
+pluginManager.takeIf { it.hasPlugin("java") }?.apply { println("I have java plugin") }
+configurations.names.firstOrNull { it == "compile" }?.apply { println("I have $this configuration") }
 
 repositories {
     mavenCentral()
@@ -16,5 +18,5 @@ repositories {
 }
 
 dependencies {
-    implementation("com.google.guava:guava:26.0-jre")
+        compile("com.google.guava:guava:26.0-jre")
 }
