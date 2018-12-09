@@ -1,0 +1,12 @@
+.gradle
+/build/
+lib/
+!gradle/wrapper/gradle-wrapper.jar
+/src/main/resources/static/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
